@@ -30,7 +30,8 @@
             <span class="text-2xl font-bold text-gold-300 mb-1">{{ stat.unit }}</span>
           </div>
           <!-- 说明 -->
-          <p class="text-neutral-400 text-sm mt-2">{{ stat.label }}</p>
+          <p class="text-neutral-300 text-sm font-medium mt-2">{{ stat.label }}</p>
+          <p v-if="stat.sublabel" class="text-neutral-500 text-xs mt-1">{{ stat.sublabel }}</p>
         </div>
       </div>
     </div>
@@ -66,15 +67,16 @@ interface Stat {
   target: number
   unit: string
   label: string
+  sublabel?: string
   icon: ReturnType<typeof defineComponent>
   displayed: string
 }
 
 const stats = reactive<Stat[]>([
-  { target: 40000, unit: '+', label: '累计服务人数', icon: IconUsers, displayed: '0' },
-  { target: 20, unit: '+', label: '覆盖全国区域', icon: IconMap, displayed: '0' },
-  { target: 500, unit: '+', label: '合作企业数量', icon: IconBuilding, displayed: '0' },
-  { target: 15, unit: '+', label: '深耕行业年限', icon: IconClock, displayed: '0' },
+  { target: 400, unit: '+', label: '覆盖城市', sublabel: '遍及全国31省', icon: IconMap, displayed: '0' },
+  { target: 20000, unit: '+', label: '赋能中外人才', sublabel: '服务百余家客户', icon: IconUsers, displayed: '0' },
+  { target: 10, unit: '+', label: '专业团队沉淀', sublabel: '行业深耕年限', icon: IconClock, displayed: '0' },
+  { target: -1, unit: '', label: '全时服务保障', sublabel: '随时响应需求', icon: IconBuilding, displayed: '7×24' },
 ])
 
 const sectionEl = ref<HTMLElement | null>(null)
@@ -92,6 +94,7 @@ function animateCounters() {
   hasAnimated.value = true
 
   stats.forEach((stat) => {
+    if (stat.target < 0) return // static display, skip animation
     const duration = 2000
     const start = performance.now()
     const fn = (now: number) => {

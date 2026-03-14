@@ -1,25 +1,28 @@
 <template>
-  <div class="min-h-screen pt-24 pb-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- 页面横幅 -->
-      <div class="text-center py-20 relative">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-900/60 to-brand-950 rounded-3xl -z-10" />
-        <p class="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-4">About Us</p>
-        <h1 class="section-title text-5xl mb-6">关于中达聚财</h1>
-        <p class="section-subtitle max-w-2xl mx-auto">
-          深耕人力资源与企业服务十五年，以专业与诚信构建企业发展的坚实基础
-        </p>
-      </div>
+  <div>
+    <AboutHeroBanner />
+    <AboutCompanyIntro />
+    <AboutCoreValues />
+    <AboutPhilosophy />
 
-      <!-- 占位内容 -->
-      <div class="mt-16 glass-card p-12 text-center">
-        <div class="w-16 h-16 rounded-full bg-brand-800/60 flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-brand-300" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+    <!-- 底部 CTA -->
+    <section class="py-24 bg-gradient-to-b from-brand-900 to-brand-950">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <p class="text-gold-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4">Work With Us</p>
+        <h2 class="section-title text-4xl mb-4">携手中达聚财</h2>
+        <p class="section-subtitle mb-10">专业团队为您的企业提供一体化人力资源解决方案，助力业务高效稳定运营</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <NuxtLink to="/contact" class="btn-primary text-base px-8 py-3.5">
+            立即咨询，了解合作方案
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </NuxtLink>
+          <NuxtLink to="/services" class="btn-outline text-base px-8 py-3.5">
+            了解核心业务
+          </NuxtLink>
         </div>
-        <p class="text-neutral-400 text-lg">关于我们页面正在建设中，敬请期待...</p>
       </div>
-    </div>
+    </section>
   </div>
 </template>
