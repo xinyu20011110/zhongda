@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-950 text-neutral-50 font-sans antialiased;
+  }
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* 流光 CTA 按钮 */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, theme('colors.brand.600'), theme('colors.brand.400'));
+  }
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    background-size: 200% 100%;
+  }
+  .btn-primary:hover::before {
+    @apply opacity-100;
+    animation: shimmer 1.2s linear infinite;
+  }
+  .btn-primary:hover {
+    @apply shadow-glow-blue scale-105;
+  }
+
+  /* 描边次级按钮 */
+  .btn-outline {
+    @apply relative inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-white border border-white/30 transition-all duration-300 overflow-hidden;
+  }
+  .btn-outline:hover {
+    @apply border-gold-400 text-gold-300 scale-105;
+    box-shadow: 0 0 16px rgba(212, 160, 23, 0.3);
+  }
+
+  /* 毛玻璃卡片 */
+  .glass-card {
+    @apply relative rounded-2xl border border-white/[0.08] transition-all duration-300;
+    background: rgba(10, 37, 64, 0.6);
+    backdrop-filter: blur(12px);
+    box-shadow: theme('boxShadow.card');
+  }
+  .glass-card:hover {
+    @apply border-brand-500/40;
+    box-shadow: theme('boxShadow.glow-blue'), theme('boxShadow.card');
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* 毛玻璃导航背景 */
+  .glass-navbar {
+    background: rgba(6, 21, 41, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* 章节大标题 */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-white leading-tight;
+  }
+  .section-subtitle {
+    @apply text-neutral-400 text-lg leading-relaxed;
+  }
+
+  /* 金色高亮文字 */
+  .text-gold-highlight {
+    @apply text-gold-400 font-bold;
+  }
+
+  /* 渐变边框 */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::after {
+    content: '';
+    @apply absolute inset-0 rounded-2xl pointer-events-none;
+    background: linear-gradient(135deg, theme('colors.brand.500'), theme('colors.gold.400'));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+  }
+
+  /* 入场动效初始状态 */
+  .animate-on-enter {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .animate-on-enter.visible {
+    @apply animate-fade-up;
+  }
+}
