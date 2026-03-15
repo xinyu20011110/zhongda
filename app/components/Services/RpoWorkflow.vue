@@ -43,33 +43,6 @@
         </div>
       </div>
 
-      <!-- 移动端：竖向时间轴 -->
-      <div class="lg:hidden">
-        <div class="relative pl-10">
-          <!-- 左侧连接线 -->
-          <div class="absolute left-4 top-3 bottom-3 w-px bg-brand-800/50" />
-          <!-- 动效进度线 -->
-          <div class="absolute left-4 top-3 w-px bg-gradient-to-b from-brand-500 to-gold-400 workflow-line-v"
-            :class="visible ? 'workflow-line-v--active' : ''" />
-
-          <div class="space-y-6">
-            <div v-for="(step, i) in steps" :key="i" class="workflow-step-v"
-              :class="visible ? 'workflow-step-v--visible' : ''" :style="`--delay: ${i * 100}ms`">
-              <!-- 序号圆圈（绝对定位到左侧线上） -->
-              <div class="step-dot-v absolute -left-[26px]">
-                <span class="text-xs font-black">{{ i + 1 }}</span>
-              </div>
-
-              <!-- 内容 -->
-              <div class="glass-card p-4">
-                <h4 class="text-white font-bold text-sm mb-1">{{ step.title }}</h4>
-                <p class="text-neutral-500 text-xs leading-relaxed">{{ step.desc }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 </template>
