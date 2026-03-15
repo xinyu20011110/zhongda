@@ -96,8 +96,8 @@ const modules = [
     description: '整合全渠道资源与大数据匹配技术，提供从岗位发布到入职跟进的全流程一站式招聘服务，降低招聘成本、提升到岗质量。',
     tags: ['全渠道覆盖', '视频化招聘', '雇主品牌', '按效付费'],
     icon: IconRpo,
-    iconBg: 'linear-gradient(135deg, rgba(16,80,160,0.5), rgba(26,111,212,0.3))',
-    iconColor: '#72B5F2',
+    iconBg: 'linear-gradient(135deg, rgba(184,134,11,0.35), rgba(232,184,64,0.2))',
+    iconColor: '#E8B840',
     to: '/services?tab=rpo',
   },
   {
@@ -105,8 +105,8 @@ const modules = [
     description: '承接企业全国范围内人员招募、合同签订、档案管理及用工风险管控，让企业从繁杂人事事务中解脱，聚焦核心业务。',
     tags: ['风险管控', '属地化参保', '弹性用工', '全国联动'],
     icon: IconOutsource,
-    iconBg: 'linear-gradient(135deg, rgba(184,134,11,0.3), rgba(232,184,64,0.2))',
-    iconColor: '#F0CC70',
+    iconBg: 'linear-gradient(135deg, rgba(16,185,129,0.2), rgba(52,211,153,0.12))',
+    iconColor: '#10b981',
     to: '/services?tab=outsource',
   },
   {
@@ -114,8 +114,8 @@ const modules = [
     description: '面向业务高峰、季节性用工及项目制需求，提供按需配置、快速响应的弹性人力资源方案，有效控制固定用工成本。',
     tags: ['按需配置', '快速响应', '成本优化', '合规保障'],
     icon: IconFlex,
-    iconBg: 'linear-gradient(135deg, rgba(16,80,160,0.4), rgba(72,180,248,0.2))',
-    iconColor: '#72B5F2',
+    iconBg: 'linear-gradient(135deg, rgba(249,115,22,0.25), rgba(251,146,60,0.12))',
+    iconColor: '#f97316',
     to: '/services?tab=flex',
   },
 ]
