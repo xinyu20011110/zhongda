@@ -76,7 +76,12 @@
 </template>
 
 <script setup lang="ts">
-const activeTab = ref<'rpo' | 'outsource' | 'flex'>('rpo')
+const route = useRoute()
+const activeTab = ref<'rpo' | 'outsource' | 'flex'>(
+  (['rpo', 'outsource', 'flex'].includes(route.query.tab as string)
+    ? route.query.tab
+    : 'rpo') as 'rpo' | 'outsource' | 'flex'
+)
 </script>
 
 <style scoped>
