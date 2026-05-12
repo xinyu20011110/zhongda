@@ -1,12 +1,12 @@
 <template>
-  <section ref="sectionEl" class="py-20 relative overflow-hidden">
+  <section ref="sectionEl" class="py-20 relative overflow-hidden bg-white">
     <!-- 顶部分隔线发光 -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-brand-400 to-transparent" />
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#1890FF]/30 to-transparent" />
 
     <div class="max-w-7xl mx-auto px-6">
       <!-- 标题 -->
       <div class="text-center mb-14 animate-on-enter" ref="titleEl">
-        <p class="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-3">核心实力</p>
+        <p class="text-[#00BFA5] text-sm font-semibold tracking-widest uppercase mb-3">核心实力</p>
         <h2 class="section-title">数字见证价值</h2>
       </div>
 
@@ -19,19 +19,20 @@
           :style="{ transitionDelay: `${i * 0.1}s` }"
         >
           <!-- 图标 -->
-          <div class="w-12 h-12 rounded-xl bg-brand-800/60 border border-brand-600/30 flex items-center justify-center mx-auto mb-5">
-            <component :is="stat.icon" class="w-6 h-6 text-brand-300" />
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-5"
+            style="background: linear-gradient(135deg, rgba(24,144,255,0.08), rgba(0,191,165,0.05)); border: 1px solid rgba(24,144,255,0.12)">
+            <component :is="stat.icon" class="w-6 h-6 text-[#1890FF]" />
           </div>
           <!-- 数字 -->
           <div class="flex items-end justify-center gap-1 mb-2">
-            <span class="text-4xl md:text-5xl font-bold text-gold-400 tabular-nums">
+            <span class="text-4xl md:text-5xl font-bold tabular-nums" style="background: linear-gradient(135deg, #1890FF, #00BFA5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
               {{ stat.displayed }}
             </span>
-            <span class="text-2xl font-bold text-gold-300 mb-1">{{ stat.unit }}</span>
+            <span class="text-2xl font-bold text-[#00BFA5] mb-1">{{ stat.unit }}</span>
           </div>
           <!-- 说明 -->
-          <p class="text-neutral-300 text-sm font-medium mt-2">{{ stat.label }}</p>
-          <p v-if="stat.sublabel" class="text-neutral-500 text-xs mt-1">{{ stat.sublabel }}</p>
+          <p class="text-neutral-700 text-sm font-medium mt-2">{{ stat.label }}</p>
+          <p v-if="stat.sublabel" class="text-neutral-400 text-xs mt-1">{{ stat.sublabel }}</p>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-900 relative overflow-hidden">
+  <section ref="sectionEl" class="py-24 relative overflow-hidden" style="background: #ffffff;">
 
     <!-- 背景光晕 -->
     <div class="absolute inset-0 pointer-events-none">
@@ -24,7 +24,7 @@
           :style="`--delay: ${i * 150}ms`">
           <!-- 图标 -->
           <div class="stat-icon-wrap mb-6">
-            <svg class="w-7 h-7" style="color: #10b981" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            <svg class="w-7 h-7" style="color: #00BFA5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.6">
               <path v-for="(d, pi) in stat.paths" :key="pi" stroke-linecap="round" stroke-linejoin="round" :d="d" />
             </svg>
@@ -120,9 +120,8 @@ onMounted(() => {
   text-align: center;
   padding: 40px 32px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 37, 64, 0.4);
-  backdrop-filter: blur(12px);
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
   opacity: 0;
   transform: translateY(28px);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
@@ -133,8 +132,8 @@ onMounted(() => {
 }
 
 .stat-card:hover {
-  border-color: rgba(16, 185, 129, 0.2);
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35), 0 0 30px rgba(16, 185, 129, 0.07);
+  border-color: rgba(0, 191, 165, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 0 30px rgba(0, 191, 165, 0.07);
   transform: translateY(-4px);
 }
 
@@ -142,8 +141,8 @@ onMounted(() => {
   width: 60px;
   height: 60px;
   border-radius: 16px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(0, 191, 165, 0.08);
+  border: 1px solid rgba(0, 191, 165, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +152,7 @@ onMounted(() => {
   font-size: 3rem;
   font-weight: 900;
   line-height: 1;
-  background: linear-gradient(135deg, #34d399, #10b981);
+  background: linear-gradient(135deg, #00BFA5, #0EA5C9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,7 +162,7 @@ onMounted(() => {
 .stat-suffix {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #34d399;
+  color: #00BFA5;
   padding-bottom: 4px;
 }
 

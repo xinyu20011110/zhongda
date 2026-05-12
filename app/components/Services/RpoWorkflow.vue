@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-950">
+  <section ref="sectionEl" class="py-24" style="background: #f8fafc;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -160,20 +160,20 @@ onMounted(() => {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, theme('colors.brand.700'), theme('colors.brand.900'));
-  border: 2px solid theme('colors.brand.600');
+  background: linear-gradient(135deg, #e8f4ff, #c8e4ff);
+  border: 2px solid rgba(24,144,255,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: theme('colors.brand.200');
+  color: #1890FF;
   z-index: 10;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .workflow-step:hover .step-dot {
-  border-color: theme('colors.gold.400');
-  background: linear-gradient(135deg, theme('colors.brand.500'), theme('colors.brand.700'));
-  box-shadow: 0 0 20px rgba(232, 184, 64, 0.5);
+  border-color: #1890FF;
+  background: linear-gradient(135deg, #1890FF, #0EA5C9);
+  box-shadow: 0 0 20px rgba(24, 144, 255, 0.4);
   color: white;
 }
 
@@ -184,7 +184,7 @@ onMounted(() => {
 }
 
 .step-title {
-  color: white;
+  color: #111827;
   font-weight: 700;
   font-size: 0.875rem;
   margin-bottom: 0.375rem;
@@ -192,18 +192,18 @@ onMounted(() => {
 }
 
 .step-desc {
-  color: rgb(115 115 115);
+  color: #9ca3af;
   font-size: 0.75rem;
   line-height: 1.5;
   transition: color 0.3s ease;
 }
 
 .workflow-step:hover .step-title {
-  color: theme('colors.gold.300');
+  color: #1890FF;
 }
 
 .workflow-step:hover .step-desc {
-  color: rgb(163 163 163);
+  color: #6b7280;
 }
 
 /* 外圈脉冲 */
@@ -211,7 +211,7 @@ onMounted(() => {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  border: 1px solid rgba(232, 184, 64, 0.3);
+  border: 1px solid rgba(24, 144, 255, 0.3);
   animation: ring-pulse 2.5s ease-out infinite;
 }
 

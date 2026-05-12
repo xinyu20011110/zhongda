@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-950">
+  <section ref="sectionEl" class="py-24" style="background: #f8fafc;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -18,7 +18,7 @@
         <!-- 动效进度线 -->
         <div class="absolute h-px pointer-events-none workflow-line" :class="visible ? 'workflow-line--active' : ''"
           style="top: 46px; left: calc(100%/14); right: calc(100%/14);
-                 background: linear-gradient(90deg, #10b981, #34d399, #10b981)" />
+                 background: linear-gradient(90deg, #00BFA5, #0EA5C9, #00BFA5)" />
 
         <!-- 卡片列表 -->
         <div class="grid grid-cols-7 gap-3">
@@ -32,7 +32,7 @@
 
             <!-- 图标圆 -->
             <div class="step-icon-circle">
-              <svg class="w-5 h-5" style="color: #10b981" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              <svg class="w-5 h-5" style="color: #00BFA5" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="1.8">
                 <path v-for="(d, pi) in step.paths" :key="pi" stroke-linecap="round" stroke-linejoin="round" :d="d" />
               </svg>
@@ -159,9 +159,8 @@ onMounted(() => {
   position: relative;
   padding: 24px 14px 20px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(10, 37, 64, 0.5);
-  backdrop-filter: blur(10px);
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
   text-align: center;
   overflow: hidden;
   cursor: default;
@@ -193,9 +192,9 @@ onMounted(() => {
 
 .step-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.45), 0 0 32px rgba(16, 185, 129, 0.18);
-  background: rgba(6, 50, 35, 0.55);
+  border-color: rgba(0, 191, 165, 0.4);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(0, 191, 165, 0.12);
+  background: rgba(0, 191, 165, 0.03);
 }
 
 /* ===== 顶部亮线 ===== */
@@ -206,7 +205,7 @@ onMounted(() => {
   right: 10%;
   height: 2px;
   border-radius: 0 0 4px 4px;
-  background: linear-gradient(90deg, transparent, #10b981, transparent);
+  background: linear-gradient(90deg, transparent, #00BFA5, transparent);
   opacity: 0;
   transform: scaleX(0.4);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -225,13 +224,13 @@ onMounted(() => {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: rgba(16, 185, 129, 0.35);
+  color: rgba(0, 191, 165, 0.35);
   transition: color 0.3s ease;
   line-height: 1;
 }
 
 .step-card:hover .step-badge {
-  color: #34d399;
+  color: #00BFA5;
 }
 
 /* ===== 图标圆 ===== */
@@ -240,8 +239,8 @@ onMounted(() => {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(6, 21, 41, 0.8));
-  border: 1.5px solid rgba(16, 185, 129, 0.25);
+  background: rgba(0, 191, 165, 0.06);
+  border: 1.5px solid rgba(0, 191, 165, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -251,9 +250,9 @@ onMounted(() => {
 }
 
 .step-card:hover .step-icon-circle {
-  border-color: #34d399;
-  box-shadow: 0 0 22px rgba(16, 185, 129, 0.5), 0 0 8px rgba(16, 185, 129, 0.3);
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 21, 41, 0.6));
+  border-color: #00BFA5;
+  box-shadow: 0 0 22px rgba(0, 191, 165, 0.4), 0 0 8px rgba(0, 191, 165, 0.25);
+  background: rgba(0, 191, 165, 0.12);
 }
 
 /* 脉冲光环 */
@@ -285,7 +284,7 @@ onMounted(() => {
 
 /* ===== 标题 ===== */
 .step-title {
-  color: rgb(229 229 229);
+  color: #111827;
   font-weight: 700;
   font-size: 0.8rem;
   margin-top: 12px;
@@ -295,7 +294,7 @@ onMounted(() => {
 }
 
 .step-card:hover .step-title {
-  color: #34d399;
+  color: #00BFA5;
 }
 
 /* ===== 描述（常驻显示）===== */
@@ -316,14 +315,14 @@ onMounted(() => {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(0, 191, 165, 0.25);
   margin: 12px auto 0;
   transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .step-card:hover .step-dot-indicator {
-  background: #34d399;
-  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+  background: #00BFA5;
+  box-shadow: 0 0 8px rgba(0, 191, 165, 0.5);
   transform: scale(1.5);
 }
 </style>

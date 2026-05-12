@@ -6,9 +6,9 @@
     <CasesStudyAcasia />
 
     <!-- 底部 CTA -->
-    <section class="py-24 bg-gradient-to-b from-brand-900 to-brand-950">
+    <section class="py-24 bg-gradient-to-b from-[#F8FAFD] to-white">
       <div class="max-w-3xl mx-auto px-6 text-center">
-        <p class="text-gold-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4">Start Cooperation</p>
+        <p class="text-[#00BFA5] text-xs font-semibold tracking-[0.4em] uppercase mb-4">Start Cooperation</p>
         <h2 class="section-title text-4xl mb-4">成为下一个成功案例</h2>
         <p class="section-subtitle mb-10">
           无论是招聘外包、人才管理还是灵活用工，我们都能为您量身定制专属解决方案

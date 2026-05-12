@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-950">
+  <section ref="sectionEl" class="py-24" style="background: #f8fafc;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -27,7 +27,7 @@
             </div>
             <div>
               <div class="text-[10px] font-semibold tracking-[0.3em] text-gold-400/70 uppercase mb-0.5">0{{ i + 1 }}</div>
-              <h3 class="text-white font-bold text-lg leading-none">{{ adv.title }}</h3>
+              <h3 style="color:#111827" class="font-bold text-lg leading-none">{{ adv.title }}</h3>
             </div>
           </div>
 
@@ -48,17 +48,18 @@
                 </div>
                 <div class="flex-1">
                   <div class="flex items-center gap-2 mb-1">
-                    <span class="text-white font-semibold text-sm">{{ item.label }}</span>
+                    <span style="color:#111827" class="font-semibold text-sm">{{ item.label }}</span>
                     <!-- 高亮数字 -->
                     <span v-if="item.stat" class="text-gold-400 font-black text-base leading-none">{{ item.stat }}</span>
                   </div>
-                  <p class="text-neutral-500 text-xs leading-relaxed">{{ item.desc }}</p>
+                  <p style="color:#6b7280" class="text-xs leading-relaxed">{{ item.desc }}</p>
                   <!-- 工具标签 -->
                   <div v-if="item.tags" class="flex flex-wrap gap-1.5 mt-2">
                     <span
                       v-for="tag in item.tags"
                       :key="tag"
-                      class="text-[10px] px-2 py-0.5 rounded-full bg-brand-800/60 text-brand-200 border border-brand-700/40"
+                      class="text-[10px] px-2 py-0.5 rounded-full"
+                      style="background: rgba(24,144,255,0.08); color: #1890FF; border: 1px solid rgba(24,144,255,0.2)"
                     >
                       {{ tag }}
                     </span>
@@ -188,15 +189,13 @@ onMounted(() => {
   position: relative;
   padding: 32px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  background: rgba(10, 37, 64, 0.55);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   opacity: 0;
   transform: translateY(28px);
   transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
-  /* 左侧金色竖线装饰 */
-  border-left: 3px solid rgba(232, 184, 64, 0.4);
+  border-left: 3px solid rgba(24, 144, 255, 0.35);
 }
 
 .adv-card--visible {
@@ -204,8 +203,8 @@ onMounted(() => {
 }
 
 .adv-card:hover {
-  border-left-color: rgba(232, 184, 64, 0.8);
-  box-shadow: 0 0 20px rgba(26, 111, 212, 0.2), 0 4px 24px rgba(0, 0, 0, 0.4);
+  border-left-color: rgba(24, 144, 255, 0.8);
+  box-shadow: 0 8px 32px rgba(24, 144, 255, 0.1);
   transform: translateY(-4px);
 }
 

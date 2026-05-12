@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-900">
+  <section ref="sectionEl" class="py-24" style="background: #ffffff;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -73,8 +73,8 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-white font-bold text-sm mb-1">{{ service.title }}</h4>
-              <p class="text-neutral-400 text-xs leading-relaxed">{{ service.desc }}</p>
+              <h4 class="font-bold text-sm mb-1" style="color:#111827">{{ service.title }}</h4>
+              <p class="text-xs leading-relaxed" style="color:#6b7280">{{ service.desc }}</p>
             </div>
           </div>
         </div>
@@ -86,9 +86,9 @@
         :class="visible ? 'animate-fade-up' : 'opacity-0'"
         style="animation-delay: 0.5s"
       >
-        <p class="text-base font-medium leading-relaxed" style="color: rgba(255,255,255,0.85)">
+        <p class="text-base font-medium leading-relaxed" style="color:rgba(30,80,60,0.9)">
           通过以上服务帮助企业从繁杂的人事管理业务中解脱出来，
-          <span style="color: #34d399; font-weight: 700">集中资源和精力投入到企业经营和市场等核心工作中</span>
+          <span style="color: #00BFA5; font-weight: 700">集中资源和精力投入到企业经营和市场等核心工作中</span>
         </p>
       </div>
 
@@ -213,13 +213,13 @@ onMounted(() => {
   gap: 14px;
   padding: 18px 20px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(10, 37, 64, 0.4);
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
   transition: border-color 0.3s, background 0.3s, transform 0.3s;
 }
 .service-item:hover {
-  border-color: rgba(16, 185, 129, 0.2);
-  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(0, 191, 165, 0.3);
+  background: rgba(0, 191, 165, 0.04);
   transform: translateX(4px);
 }
 
@@ -236,7 +236,7 @@ onMounted(() => {
 
 /* 引语横幅 */
 .quote-banner {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.07), rgba(6, 21, 41, 0.6));
-  border: 1px solid rgba(16, 185, 129, 0.15);
+  background: linear-gradient(135deg, rgba(0, 191, 165, 0.06), rgba(14,165,201,0.04));
+  border: 1px solid rgba(0, 191, 165, 0.15);
 }
 </style>

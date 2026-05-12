@@ -1,25 +1,22 @@
 <template>
-  <nav ref="navbarEl" class="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.12] transition-all duration-500"
+  <nav ref="navbarEl" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
     :class="[scrolled ? 'shadow-navbar navbar-scrolled' : 'navbar-top']">
     <div class="max-w-7xl mx-auto px-8">
       <div class="flex items-center justify-between h-20">
         <!-- Logo 左侧 -->
         <NuxtLink to="/" class="flex items-center gap-4 group">
           <!-- Logo Icon -->
-          <div
-            class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-400 to-brand-700 flex items-center justify-center transition-all duration-300 group-hover:shadow-glow-blue group-hover:scale-105">
-            <svg class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
-          </div>
+          <img
+            src="~/assets/img/logo.png"
+            alt="Zhongda Fortune Logo"
+            class="w-12 h-12 object-contain transition-all duration-300 group-hover:shadow-glow-blue group-hover:scale-105"
+          />
           <!-- 公司名称 -->
           <div class="flex flex-col leading-tight">
-            <span class="text-xl font-bold text-white tracking-widest">
-              中达<span class="text-gold-400">聚财</span>
+            <span class="text-xl font-bold tracking-widest" :class="scrolled ? 'text-neutral-800' : 'text-neutral-800'">
+              中达<span class="text-[#00BFA5]">聚财</span>
             </span>
-            <span class="text-[10px] text-neutral-400 tracking-[0.2em] uppercase">Zhongda Jucai</span>
+            <span class="text-[10px] text-neutral-400 tracking-[0.2em] uppercase">Zhongda Fortune</span>
           </div>
         </NuxtLink>
 
@@ -30,12 +27,13 @@
         </div>
 
         <!-- 移动端汉堡按钮 -->
-        <button class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-white/10 transition-colors"
+        <button class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-neutral-100 transition-colors"
           @click="toggleMenu" aria-label="打开菜单">
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300"
+          <span class="block w-6 h-0.5 bg-neutral-700 transition-all duration-300"
             :class="menuOpen ? 'rotate-45 translate-y-2' : ''" />
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300" :class="menuOpen ? 'opacity-0' : ''" />
-          <span class="block w-6 h-0.5 bg-white transition-all duration-300"
+          <span class="block w-6 h-0.5 bg-neutral-700 transition-all duration-300"
+            :class="menuOpen ? 'opacity-0' : ''" />
+          <span class="block w-6 h-0.5 bg-neutral-700 transition-all duration-300"
             :class="menuOpen ? '-rotate-45 -translate-y-2' : ''" />
         </button>
       </div>
@@ -43,10 +41,10 @@
 
     <!-- 移动端抽屉菜单 -->
     <Transition name="drawer">
-      <div v-if="menuOpen" class="md:hidden border-t border-white/[0.08] navbar-scrolled">
+      <div v-if="menuOpen" class="md:hidden border-t border-neutral-100 navbar-scrolled">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
           <NuxtLink v-for="link in navLinks" :key="link.to" :to="link.to"
-            class="px-4 py-3 rounded-lg text-neutral-300 hover:text-gold-400 hover:bg-white/5 transition-all duration-200 font-medium"
+            class="px-4 py-3 rounded-lg text-neutral-600 hover:text-[#1890FF] hover:bg-blue-50/50 transition-all duration-200 font-medium"
             @click="menuOpen = false">
             {{ link.label }}
           </NuxtLink>
@@ -85,18 +83,20 @@ onMounted(() => {
 </script>
 
 <style scoped>
-/* 顶部未滚动：透明度较低，毛玻璃感弱 */
+/* 顶部未滚动：白色半透明 */
 .navbar-top {
-  background: rgba(6, 21, 41, 0.45);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
 }
 
-/* 滚动后：明显毛玻璃 */
+/* 滚动后：纯白毛玻璃 */
 .navbar-scrolled {
-  background: rgba(6, 21, 41, 0.82);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .drawer-enter-active,

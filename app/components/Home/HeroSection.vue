@@ -1,71 +1,68 @@
 <template>
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-    <!-- 深蓝渐变背景 -->
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-950 via-brand-900 to-brand-950" />
+    <!-- 纯白到极浅灰渐变背景 -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-[#F8FAFD] to-white" />
 
-    <!-- 放射状光晕（公司名后方） -->
+    <!-- 放射状光晕（蓝+绿） -->
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div class="w-[600px] h-[600px] rounded-full opacity-[0.12] blur-[80px] bg-brand-400 hero-radial-glow" />
+      <div class="w-[600px] h-[600px] rounded-full opacity-[0.08] blur-[100px] bg-[#1890FF] hero-radial-glow" />
     </div>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div class="w-[300px] h-[300px] rounded-full opacity-[0.08] blur-[60px] bg-gold-400 hero-radial-glow"
+      <div class="w-[300px] h-[300px] rounded-full opacity-[0.06] blur-[80px] bg-[#00BFA5] hero-radial-glow"
         style="animation-delay: -1s" />
     </div>
 
     <!-- 背景网格线 -->
-    <div class="absolute inset-0 opacity-[0.035]"
-      style="background-image: linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px); background-size: 60px 60px;" />
+    <div class="absolute inset-0 opacity-[0.03]"
+      style="background-image: linear-gradient(rgba(0,0,0,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.15) 1px, transparent 1px); background-size: 60px 60px;" />
 
     <!-- 动态粒子光点 -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div v-for="i in 14" :key="i" class="absolute rounded-full bg-brand-300" :style="particleStyle(i)" />
+      <div v-for="i in 14" :key="i" class="absolute rounded-full" :style="particleStyle(i)" />
     </div>
 
     <!-- 主内容 -->
     <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
-      <!-- ① Logo + 公司名 —— 最重点，最先出现，最大 -->
+      <!-- ① Logo + 公司名 -->
       <div class="hero-logo-block mb-14">
         <!-- Logo 图标 -->
         <div class="flex justify-center mb-6">
-          <div
-            class="hero-logo-icon w-28 h-28 rounded-3xl bg-gradient-to-br from-brand-400 via-brand-600 to-brand-800 flex items-center justify-center shadow-glow-blue">
-            <svg class="w-14 h-14 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2 17l10 5 10-5" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2 12l10 5 10-5" />
-            </svg>
+          <div class="hero-logo-icon w-28 h-28 flex items-center justify-center">
+            <img src="~/assets/img/logo.png" alt="Zhongda Logo" class="w-full h-full object-contain" />
           </div>
         </div>
 
         <!-- 公司名 -->
-        <h1 class="hero-company-name text-6xl md:text-8xl lg:text-9xl font-black tracking-widest mb-3 leading-none">
-          中达<span class="text-gold-400 hero-gold-text">聚财</span>
+        <h1
+          class="hero-company-name text-6xl md:text-8xl lg:text-9xl font-black tracking-widest mb-3 leading-none text-neutral-800">
+          中达<span class="hero-accent-text"
+            style="background: linear-gradient(135deg, #1890FF, #00BFA5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">聚财</span>
         </h1>
 
         <!-- 英文副名 + 分隔线 -->
         <div class="flex items-center justify-center gap-4 mb-2">
-          <div class="h-px w-16 bg-gradient-to-r from-transparent to-gold-400/60" />
-          <p class="text-gold-300/70 text-sm tracking-[0.4em] uppercase font-light">Zhongda Jucai</p>
-          <div class="h-px w-16 bg-gradient-to-l from-transparent to-gold-400/60" />
+          <div class="h-px w-16 bg-gradient-to-r from-transparent to-[#00BFA5]/40" />
+          <p class="text-neutral-400 text-sm tracking-[0.4em] uppercase font-light">Zhongda Fortune</p>
+          <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#1890FF]/40" />
         </div>
       </div>
 
-      <!-- ② 理念标语 —— 第二层 -->
+      <!-- ② 理念标语 -->
       <div class="hero-tagline mb-4">
-        <p class="text-2xl md:text-3xl lg:text-4xl font-semibold text-white/90 tracking-wide leading-relaxed">
-          合规赋能 <span class="text-gold-400/80">·</span> 多元协同 <span class="text-gold-400/80">·</span>
-          <span class="text-gold-300"> 价值共生</span>
+        <p class="text-2xl md:text-3xl lg:text-4xl font-semibold text-neutral-700 tracking-wide leading-relaxed">
+          合规赋能 <span class="text-[#1890FF]/60">·</span> 多元协同 <span class="text-[#1890FF]/60">·</span>
+          <span class="text-[#00BFA5]"> 价值共生</span>
         </p>
       </div>
 
-      <!-- ③ 副标题说明 —— 第三层 -->
-      <p class="hero-subtitle section-subtitle text-base md:text-lg max-w-2xl mx-auto mb-10 text-neutral-400">
+      <!-- ③ 副标题说明 -->
+      <p class="hero-subtitle section-subtitle text-base md:text-lg max-w-2xl mx-auto mb-10">
         深耕人力资源、商务生活、教育培训与咨询投资四大领域，
         以专业合规的服务体系赋能企业降本增效、规避风险。
       </p>
 
-      <!-- ④ CTA 按钮组 —— 第四层 -->
+      <!-- ④ CTA 按钮组 -->
       <div class="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center">
         <NuxtLink to="/services" class="btn-primary text-base px-8 py-3.5">
           探索核心业务
@@ -80,10 +77,10 @@
 
       <!-- 滚动指示器 -->
       <div class="hero-scroll mt-16 flex justify-center">
-        <div class="flex flex-col items-center gap-2 text-neutral-500 text-xs">
+        <div class="flex flex-col items-center gap-2 text-neutral-400 text-xs">
           <span>向下探索</span>
-          <div class="w-5 h-9 rounded-full border border-white/20 flex justify-center pt-1.5">
-            <div class="w-1 h-2.5 rounded-full bg-white/40 animate-bounce" />
+          <div class="w-5 h-9 rounded-full border border-neutral-300 flex justify-center pt-1.5">
+            <div class="w-1 h-2.5 rounded-full bg-[#1890FF]/50 animate-bounce" />
           </div>
         </div>
       </div>
@@ -112,11 +109,13 @@ function particleStyle(i: number) {
   const delays = [0, 0.8, 1.6, 2.4, 0.4, 1.2, 2.0, 3.2, 0.6, 1.8, 2.8, 0.2, 1.4, 2.2]
   const pos = positions[(i - 1) % positions.length]
   const size = 3 + (i % 4)
+  const colors = ['#1890FF', '#00BFA5']
   return {
     ...pos,
     width: `${size}px`,
     height: `${size}px`,
-    opacity: 0.25 + (i % 3) * 0.1,
+    background: colors[i % 2],
+    opacity: 0.2 + (i % 3) * 0.08,
     animation: `pulse-ring ${2.5 + (i % 3) * 0.5}s ease-out ${delays[(i - 1) % delays.length]}s infinite`,
   }
 }
@@ -129,12 +128,12 @@ function particleStyle(i: number) {
   0%,
   100% {
     transform: scale(1);
-    opacity: 0.12;
+    opacity: 0.08;
   }
 
   50% {
     transform: scale(1.15);
-    opacity: 0.18;
+    opacity: 0.12;
   }
 }
 
@@ -191,21 +190,21 @@ function particleStyle(i: number) {
   letter-spacing: 0.1em;
 }
 
-/* 金色文字额外光晕 */
-@keyframes gold-glow {
+/* 渐变文字光晕 */
+@keyframes accent-glow {
 
   0%,
   100% {
-    text-shadow: 0 0 20px rgba(212, 160, 23, 0.4), 0 0 60px rgba(212, 160, 23, 0.1);
+    filter: drop-shadow(0 0 12px rgba(24, 144, 255, 0.2));
   }
 
   50% {
-    text-shadow: 0 0 30px rgba(212, 160, 23, 0.7), 0 0 80px rgba(212, 160, 23, 0.25);
+    filter: drop-shadow(0 0 20px rgba(0, 191, 165, 0.35));
   }
 }
 
-.hero-gold-text {
-  animation: gold-glow 3s ease-in-out 1.5s infinite;
+.hero-accent-text {
+  animation: accent-glow 3s ease-in-out 1.5s infinite;
 }
 
 /* 英文副名 */

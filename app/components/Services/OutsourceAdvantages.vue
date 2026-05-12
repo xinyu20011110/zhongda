@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-950">
+  <section ref="sectionEl" class="py-24" style="background: #f8fafc;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -23,22 +23,22 @@
 
           <!-- 图标 -->
           <div class="adv-icon-wrap mb-5">
-            <svg class="w-6 h-6" style="color: #10b981" viewBox="0 0 24 24" fill="none"
+            <svg class="w-6 h-6" style="color: #00BFA5" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="1.6">
               <path v-for="(d, pi) in adv.paths" :key="pi" stroke-linecap="round" stroke-linejoin="round" :d="d" />
             </svg>
           </div>
 
           <!-- 序号 -->
-          <div class="text-xs font-bold tracking-[0.3em] mb-3" style="color: rgba(16,185,129,0.6)">
+          <div class="text-xs font-bold tracking-[0.3em] mb-3" style="color: rgba(0,191,165,0.6)">
             0{{ i + 1 }}
           </div>
 
           <!-- 标题 -->
-          <h3 class="text-white font-bold text-sm mb-3 leading-snug">{{ adv.title }}</h3>
+          <h3 class="font-bold text-sm mb-3 leading-snug" style="color:#111827">{{ adv.title }}</h3>
 
           <!-- 描述 -->
-          <p class="text-neutral-500 text-xs leading-relaxed">{{ adv.desc }}</p>
+          <p class="text-xs leading-relaxed" style="color:#6b7280">{{ adv.desc }}</p>
         </div>
       </div>
 
@@ -107,9 +107,8 @@ onMounted(() => {
   position: relative;
   padding: 28px 22px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 37, 64, 0.45);
-  backdrop-filter: blur(12px);
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
   overflow: hidden;
   opacity: 0;
   transform: translateY(28px);
@@ -121,8 +120,8 @@ onMounted(() => {
 }
 
 .adv-card:hover {
-  border-color: rgba(16, 185, 129, 0.25);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 24px rgba(16, 185, 129, 0.08);
+  border-color: rgba(0, 191, 165, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 0 24px rgba(0, 191, 165, 0.08);
   transform: translateY(-5px);
 }
 
@@ -133,7 +132,7 @@ onMounted(() => {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #10b981, transparent);
+  background: linear-gradient(90deg, transparent, #00BFA5, transparent);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -147,8 +146,8 @@ onMounted(() => {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(0, 191, 165, 0.08);
+  border: 1px solid rgba(0, 191, 165, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,9 +155,9 @@ onMounted(() => {
 }
 
 .adv-card:hover .adv-icon-wrap {
-  background: rgba(16, 185, 129, 0.18);
-  border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.2);
+  background: rgba(0, 191, 165, 0.15);
+  border-color: rgba(0, 191, 165, 0.4);
+  box-shadow: 0 0 16px rgba(0, 191, 165, 0.2);
 }
 
 @keyframes card-up {

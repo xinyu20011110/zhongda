@@ -6,9 +6,9 @@
     <AboutPhilosophy />
 
     <!-- 底部 CTA -->
-    <section class="py-24 bg-gradient-to-b from-brand-900 to-brand-950">
+    <section class="py-24 bg-gradient-to-b from-[#F8FAFD] to-white">
       <div class="max-w-3xl mx-auto px-6 text-center">
-        <p class="text-gold-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4">Work With Us</p>
+        <p class="text-[#00BFA5] text-xs font-semibold tracking-[0.4em] uppercase mb-4">Work With Us</p>
         <h2 class="section-title text-4xl mb-4">携手中达聚财</h2>
         <p class="section-subtitle mb-10">专业团队为您的企业提供一体化人力资源解决方案，助力业务高效稳定运营</p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">

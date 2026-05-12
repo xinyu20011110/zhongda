@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-900">
+  <section ref="sectionEl" class="py-24" style="background: #ffffff;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -28,10 +28,10 @@
           </div>
 
           <!-- 标题 -->
-          <h3 class="text-white font-bold text-xl mb-3 leading-snug">{{ card.title }}</h3>
+          <h3 style="color:#111827" class="font-bold text-xl mb-3 leading-snug">{{ card.title }}</h3>
 
           <!-- 描述 -->
-          <p class="text-neutral-400 text-sm leading-relaxed mb-6 flex-1">{{ card.desc }}</p>
+          <p style="color:#6b7280" class="text-sm leading-relaxed mb-6 flex-1">{{ card.desc }}</p>
 
           <!-- 标签列表 -->
           <div class="flex flex-wrap gap-2 mb-6">

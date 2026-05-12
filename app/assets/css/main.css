@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-brand-950 text-neutral-50 font-sans antialiased;
+    @apply bg-white text-neutral-800 font-sans antialiased;
   }
   * {
     box-sizing: border-box;
@@ -15,10 +15,10 @@
 }
 
 @layer components {
-  /* 流光 CTA 按钮 */
+  /* 流光 CTA 按钮 —— 蓝绿渐变 */
   .btn-primary {
     @apply relative inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-white overflow-hidden transition-all duration-300;
-    background: linear-gradient(135deg, theme('colors.brand.600'), theme('colors.brand.400'));
+    background: linear-gradient(135deg, #1890FF, #00BFA5);
   }
   .btn-primary::before {
     content: '';
@@ -26,7 +26,7 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
       transparent
     );
     background-size: 200% 100%;
@@ -41,44 +41,52 @@
 
   /* 描边次级按钮 */
   .btn-outline {
-    @apply relative inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold text-white border border-white/30 transition-all duration-300 overflow-hidden;
+    @apply relative inline-flex items-center gap-2 px-7 py-3 rounded-lg font-semibold transition-all duration-300 overflow-hidden;
+    color: #1890FF;
+    border: 1.5px solid rgba(24, 144, 255, 0.3);
   }
   .btn-outline:hover {
-    @apply border-gold-400 text-gold-300 scale-105;
-    box-shadow: 0 0 16px rgba(212, 160, 23, 0.3);
+    color: #00BFA5;
+    border-color: #00BFA5;
+    @apply scale-105;
+    box-shadow: 0 0 16px rgba(0, 191, 165, 0.15);
   }
 
-  /* 毛玻璃卡片 */
+  /* 毛玻璃卡片 —— 白底版本 */
   .glass-card {
-    @apply relative rounded-2xl border border-white/[0.08] transition-all duration-300;
-    background: rgba(10, 37, 64, 0.6);
+    @apply relative rounded-2xl border transition-all duration-300;
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(12px);
-    box-shadow: theme('boxShadow.card');
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   }
   .glass-card:hover {
-    @apply border-brand-500/40;
-    box-shadow: theme('boxShadow.glow-blue'), theme('boxShadow.card');
+    border-color: rgba(24, 144, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(24, 144, 255, 0.1), 0 4px 16px rgba(0, 0, 0, 0.06);
     transform: translateY(-4px) scale(1.02);
   }
 
   /* 毛玻璃导航背景 */
   .glass-navbar {
-    background: rgba(6, 21, 41, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
 
   /* 章节大标题 */
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-white leading-tight;
+    @apply text-3xl md:text-4xl font-bold leading-tight;
+    color: #1a1a2e;
   }
   .section-subtitle {
-    @apply text-neutral-400 text-lg leading-relaxed;
+    @apply text-lg leading-relaxed;
+    color: #6b7280;
   }
 
-  /* 金色高亮文字 */
+  /* 绿色高亮文字 */
   .text-gold-highlight {
-    @apply text-gold-400 font-bold;
+    color: #00BFA5;
+    @apply font-bold;
   }
 
   /* 渐变边框 */
@@ -88,7 +96,7 @@
   .gradient-border::after {
     content: '';
     @apply absolute inset-0 rounded-2xl pointer-events-none;
-    background: linear-gradient(135deg, theme('colors.brand.500'), theme('colors.gold.400'));
+    background: linear-gradient(135deg, #1890FF, #00BFA5);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;

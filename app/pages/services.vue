@@ -13,9 +13,9 @@
         <ServicesRpoWorkflow />
 
         <!-- 底部 CTA -->
-        <section class="py-24 bg-gradient-to-b from-brand-950 to-brand-900">
+        <section class="py-24 bg-gradient-to-b from-white to-[#F8FAFD]">
           <div class="max-w-3xl mx-auto px-6 text-center">
-            <p class="text-gold-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4">Ready to Start</p>
+            <p class="text-[#00BFA5] text-xs font-semibold tracking-[0.4em] uppercase mb-4">Ready to Start</p>
             <h2 class="section-title text-4xl mb-4">开启专属招聘合作</h2>
             <p class="section-subtitle mb-10">让 200+ 专业团队为您的企业解决用人难题，降本增效从这里开始</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -42,9 +42,9 @@
         <ServicesOutsourceWorkflow />
 
         <!-- 底部 CTA -->
-        <section class="py-24 bg-gradient-to-b from-brand-950 to-brand-900">
+        <section class="py-24 bg-gradient-to-b from-white to-[#F8FAFD]">
           <div class="max-w-3xl mx-auto px-6 text-center">
-            <p class="text-xs font-semibold tracking-[0.4em] uppercase mb-4" style="color: #10b981">Ready to Start</p>
+            <p class="text-xs font-semibold tracking-[0.4em] uppercase mb-4" style="color: #00BFA5">Ready to Start</p>
             <h2 class="section-title text-4xl mb-4">开启专属外包合作</h2>
             <p class="section-subtitle mb-10">让专业团队承担用工风险，企业专注核心业务，降本增效从这里开始</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -62,14 +62,33 @@
         </section>
       </div>
 
-      <!-- 灵活用工（占位） -->
-      <div v-else key="flex" class="min-h-[60vh] flex items-center justify-center">
-        <div class="text-center py-20 px-6">
-          <p class="text-gold-400 text-xs font-semibold tracking-[0.4em] uppercase mb-4">Coming Soon</p>
-          <h2 class="section-title text-3xl mb-4">灵活用工</h2>
-          <p class="section-subtitle max-w-lg mx-auto">该服务模块正在建设中，敬请期待...</p>
-          <NuxtLink to="/contact" class="btn-primary mt-8 inline-flex">立即咨询了解</NuxtLink>
-        </div>
+      <!-- 灵活用工 -->
+      <div v-else key="flex" class="pb-20">
+        <ServicesFlexBackground />
+        <ServicesFlexServiceIntro />
+        <ServicesFlexScenarios />
+        <ServicesFlexSolutions />
+        <ServicesFlexAdvantages />
+
+        <!-- 底部 CTA -->
+        <section class="py-24 bg-gradient-to-b from-white to-[#F8FAFD]">
+          <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="text-xs font-semibold tracking-[0.4em] uppercase mb-4" style="color: #0D7FEE">Ready to Start</p>
+            <h2 class="section-title text-4xl mb-4">开启灵活用工合作</h2>
+            <p class="section-subtitle mb-10">依托数字化平台与大数据能力，让企业按需用工、合规结算，降本增效从这里开始</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <NuxtLink to="/contact" class="btn-primary text-base px-8 py-3.5">
+                立即咨询，了解灵活用工方案
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </NuxtLink>
+              <NuxtLink to="/cases" class="btn-outline text-base px-8 py-3.5">
+                查看客户案例
+              </NuxtLink>
+            </div>
+          </div>
+        </section>
       </div>
     </Transition>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionEl" class="py-24 bg-brand-900">
+  <section ref="sectionEl" class="py-24" style="background: #f8fafc;">
     <div class="max-w-7xl mx-auto px-6">
 
       <!-- 标题区 -->
@@ -31,8 +31,8 @@
             <div class="flex items-baseline gap-2 justify-center sm:justify-start">
               <span class="text-6xl md:text-7xl font-black text-gold-400 leading-none">400<span class="text-4xl">万+</span></span>
             </div>
-            <p class="text-white font-semibold text-lg mt-1">各行业基础岗位候选人有效人才库</p>
-            <p class="text-neutral-400 text-sm mt-1">满足客户上百个岗位需求，与主流招聘平台实时同步更新</p>
+            <p class="font-semibold text-lg mt-1" style="color:#111827">各行业基础岗位候选人有效人才库</p>
+            <p class="text-sm mt-1" style="color:#6b7280">满足客户上百个岗位需求，与主流招聘平台实时同步更新</p>
           </div>
           <!-- 竖向分隔线 -->
           <div class="hidden sm:block w-px h-16 bg-white/10" />
@@ -49,8 +49,8 @@
 
       <!-- 重点服务行业标题 -->
       <div class="text-center mt-16 mb-10" :class="visible ? 'animate-fade-up-delay-1' : 'opacity-0'">
-        <h3 class="text-white font-bold text-2xl mb-2">重点服务行业</h3>
-        <p class="text-neutral-500 text-sm">六大核心行业纵深覆盖，人才储备精准匹配</p>
+        <h3 class="font-bold text-2xl mb-2" style="color:#111827">重点服务行业</h3>
+        <p class="text-sm" style="color:#6b7280">六大核心行业纵深覆盖，人才储备精准匹配</p>
       </div>
 
       <!-- 6 个行业卡片（3×2） -->
@@ -72,7 +72,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-white font-semibold text-sm">{{ industry.name }}</h4>
+              <h4 class="font-semibold text-sm" style="color:#111827">{{ industry.name }}</h4>
               <div class="text-[10px] mt-0.5" :style="`color: ${industry.color}`">{{ industry.count }} 个岗位方向</div>
             </div>
           </div>
@@ -166,9 +166,8 @@ onMounted(() => {
   position: relative;
   padding: 40px 48px;
   border-radius: 20px;
-  border: 1px solid rgba(232, 184, 64, 0.2);
-  background: linear-gradient(135deg, rgba(10, 37, 64, 0.8), rgba(13, 53, 96, 0.6));
-  backdrop-filter: blur(16px);
+  border: 1px solid rgba(24, 144, 255, 0.2);
+  background: linear-gradient(135deg, rgba(24,144,255,0.05), rgba(14,165,201,0.04));
   overflow: hidden;
   transition: transform 0.3s;
 }
@@ -179,7 +178,7 @@ onMounted(() => {
 
 .stat-banner:hover {
   transform: translateY(-2px);
-  border-color: rgba(232, 184, 64, 0.35);
+  border-color: rgba(24, 144, 255, 0.35);
 }
 
 @keyframes banner-in {
@@ -191,9 +190,8 @@ onMounted(() => {
 .industry-card {
   padding: 24px;
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(10, 37, 64, 0.5);
-  backdrop-filter: blur(10px);
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
   opacity: 0;
   transform: translateY(24px);
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
@@ -204,9 +202,9 @@ onMounted(() => {
 }
 
 .industry-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(24, 144, 255, 0.2);
   transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
 }
 
 @keyframes card-in {
@@ -219,14 +217,14 @@ onMounted(() => {
   font-size: 11px;
   padding: 3px 10px;
   border-radius: 9999px;
-  background: rgba(59, 143, 232, 0.1);
-  border: 1px solid rgba(59, 143, 232, 0.2);
-  color: theme('colors.brand.200');
+  background: rgba(24, 144, 255, 0.08);
+  border: 1px solid rgba(24, 144, 255, 0.2);
+  color: #1890FF;
   transition: background 0.2s, border-color 0.2s;
 }
 
 .industry-card:hover .role-tag {
-  background: rgba(59, 143, 232, 0.15);
-  border-color: rgba(59, 143, 232, 0.3);
+  background: rgba(24, 144, 255, 0.14);
+  border-color: rgba(24, 144, 255, 0.35);
 }
 </style>

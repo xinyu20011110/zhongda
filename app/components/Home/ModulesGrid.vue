@@ -1,13 +1,13 @@
 <template>
   <section ref="sectionEl" class="py-24 relative overflow-hidden">
     <!-- 背景装饰 -->
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-900/50 to-brand-950" />
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-brand-400/50 to-transparent" />
+    <div class="absolute inset-0 bg-gradient-to-b from-[#F8FAFD] to-white" />
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#1890FF]/30 to-transparent" />
 
     <div class="relative z-10 max-w-7xl mx-auto px-6">
       <!-- 标题区域 -->
       <div class="text-center mb-16 animate-on-enter">
-        <p class="text-gold-400 text-sm font-semibold tracking-widest uppercase mb-3">Core Services</p>
+        <p class="text-[#00BFA5] text-sm font-semibold tracking-widest uppercase mb-3">Core Services</p>
         <h2 class="section-title mb-4">三大核心业务</h2>
         <p class="section-subtitle max-w-xl mx-auto">
           覆盖招聘外包、人才外包、灵活用工三大场景，为企业提供全生命周期人力资源解决方案
@@ -23,8 +23,8 @@
           class="glass-card p-8 cursor-pointer block group animate-on-enter"
           :style="{ transitionDelay: `${i * 0.1 + 0.1}s` }"
         >
-          <!-- 悬停时右上角金色角标 -->
-          <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-gold-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-glow-gold" />
+          <!-- 悬停时右上角光点 -->
+          <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#00BFA5] opacity-0 group-hover:opacity-100 transition-opacity duration-300" style="box-shadow: 0 0 8px rgba(0,191,165,0.4)" />
           <!-- 图标 -->
           <div
             class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110"
@@ -34,10 +34,10 @@
           </div>
 
           <!-- 标题 + 描述 -->
-          <h3 class="text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors duration-300">
+          <h3 class="text-xl font-bold text-neutral-800 mb-3 group-hover:text-[#1890FF] transition-colors duration-300">
             {{ module.title }}
           </h3>
-          <p class="text-neutral-400 text-sm leading-relaxed mb-6">
+          <p class="text-neutral-500 text-sm leading-relaxed mb-6">
             {{ module.description }}
           </p>
 
@@ -46,14 +46,14 @@
             <span
               v-for="tag in module.tags"
               :key="tag"
-              class="px-2.5 py-1 rounded-md text-xs font-medium border border-white/10 text-neutral-400 group-hover:border-brand-500/40 group-hover:text-brand-300 transition-all duration-300"
+              class="px-2.5 py-1 rounded-md text-xs font-medium border border-neutral-200 text-neutral-500 group-hover:border-[#1890FF]/30 group-hover:text-[#1890FF] transition-all duration-300"
             >
               {{ tag }}
             </span>
           </div>
 
           <!-- 了解更多 -->
-          <div class="flex items-center gap-2 text-sm font-semibold text-brand-400 group-hover:text-gold-400 transition-colors duration-300">
+          <div class="flex items-center gap-2 text-sm font-semibold text-[#1890FF] group-hover:text-[#00BFA5] transition-colors duration-300">
             了解更多
             <svg
               class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -62,9 +62,6 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
           </div>
-
-          <!-- 悬停时右上角金色角标 -->
-          <div class="absolute top-4 right-4 w-2 h-2 rounded-full bg-gold-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-glow-gold" />
         </NuxtLink>
       </div>
     </div>
@@ -96,8 +93,8 @@ const modules = [
     description: '整合全渠道资源与大数据匹配技术，提供从岗位发布到入职跟进的全流程一站式招聘服务，降低招聘成本、提升到岗质量。',
     tags: ['全渠道覆盖', '视频化招聘', '雇主品牌', '按效付费'],
     icon: IconRpo,
-    iconBg: 'linear-gradient(135deg, rgba(184,134,11,0.35), rgba(232,184,64,0.2))',
-    iconColor: '#E8B840',
+    iconBg: 'linear-gradient(135deg, rgba(24,144,255,0.12), rgba(24,144,255,0.05))',
+    iconColor: '#1890FF',
     to: '/services?tab=rpo',
   },
   {
@@ -105,8 +102,8 @@ const modules = [
     description: '承接企业全国范围内人员招募、合同签订、档案管理及用工风险管控，让企业从繁杂人事事务中解脱，聚焦核心业务。',
     tags: ['风险管控', '属地化参保', '弹性用工', '全国联动'],
     icon: IconOutsource,
-    iconBg: 'linear-gradient(135deg, rgba(16,185,129,0.2), rgba(52,211,153,0.12))',
-    iconColor: '#10b981',
+    iconBg: 'linear-gradient(135deg, rgba(0,191,165,0.12), rgba(0,191,165,0.05))',
+    iconColor: '#00BFA5',
     to: '/services?tab=outsource',
   },
   {
@@ -114,8 +111,8 @@ const modules = [
     description: '面向业务高峰、季节性用工及项目制需求，提供按需配置、快速响应的弹性人力资源方案，有效控制固定用工成本。',
     tags: ['按需配置', '快速响应', '成本优化', '合规保障'],
     icon: IconFlex,
-    iconBg: 'linear-gradient(135deg, rgba(249,115,22,0.25), rgba(251,146,60,0.12))',
-    iconColor: '#f97316',
+    iconBg: 'linear-gradient(135deg, rgba(24,144,255,0.08), rgba(0,191,165,0.08))',
+    iconColor: '#0D7FEE',
     to: '/services?tab=flex',
   },
 ]
